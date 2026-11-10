@@ -65,6 +65,8 @@
 
 ## 数据与构建
 
+名称、输出文件名和领域均由 `dictionary_config.json` 配置。添加领域只需扩充 `domains` 映射，无需修改代码；修改 `slug` 和 `version` 即可生成对应名称的文件。现有 `.eudic` 下载仍为 v1.1，配置版本不代表已重新发布二进制成品。
+
 词典的源数据位于：
 
 ```text
@@ -94,6 +96,9 @@ python build.py
 TXT、HTML、CSV 不上传 GitHub。CSV 仅为可选的表格镜像，普通贡献者无需使用。网页表格与下载的 `.eudic` 当前仍对应 v1.1；新词提交不会自动更新二进制成品，维护者需要用欧路构建器重新打包。
 
 ## 项目说明
+
+想用 Agent 创建金融、电气工程等领域的词典？使用独立项目 [Dictionary Builder Skill](https://github.com/albertorson/dictionary-builder-skill)。
+下载完整 Skill 后即可生成可配置的独立工程；最终 `.eudic` 需使用欧路构建器打包。
 
 本项目是社区制作的自定义词典，与欧路软件及其开发者不存在隶属或官方合作关系。“欧路词典”等名称和标识归相应权利人所有。
 

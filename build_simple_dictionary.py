@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""从 v1.1 主数据（base_v1.0.json + additions/*.jsonl）渲染欧路简洁版 TXT。
+"""从项目配置指定的共享数据渲染欧路简洁版 TXT。
 
 格式与 v1.0 简洁版完全同构：每行「词头@单段 HTML」，七个字段：
 中文释义 / 词性 / 专业释义 / 场景辨析 / 例句 / 易混淆词 / 所属领域。
-数据源仍是 extended_data/v1.1，与增强版共用同一份主数据，只是渲染更轻。
+与增强版共用同一份主数据，只是渲染更轻。
 """
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ import json
 import re
 from pathlib import Path
 from typing import Any
+from dictionary_config import CONFIG, output_name
 
 ROOT = Path(__file__).resolve().parent
 LOCAL_OUTPUT = ROOT / "local_output"
@@ -20,10 +21,10 @@ DATA_DIR = ROOT / "extended_data" / "v1.1"
 BASE_SOURCE = DATA_DIR / "base_v1.0.json"
 ADDITION_DIR = DATA_DIR / "additions"
 # 简洁版生成结果放入本地输出目录
-OUTPUT = LOCAL_OUTPUT / "CS_AI_Dictionary_Simple_v1.1_EudicBuilder.txt"
+OUTPUT = LOCAL_OUTPUT / output_name('Simple', '_EudicBuilder.txt')
 
 # 读取增强版 TXT，检查两个版本的词头是否一致
-EXTENDED_TXT = LOCAL_OUTPUT / "CS_AI_Dictionary_Extended_v1.1_EudicBuilder.txt"
+EXTENDED_TXT = LOCAL_OUTPUT / output_name('Extended', '_EudicBuilder.txt')
 
 FIELDS = ("中文释义", "词性", "专业释义", "场景辨析", "例句", "易混淆词", "所属领域")
 
@@ -100,7 +101,7 @@ def verify(lines: list[str]) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="构建 CS-AI Dictionary Simple v1.1")
+    parser = argparse.ArgumentParser(description=f"构建 {CONFIG['name']} 简洁版")
     parser.add_argument("--check", action="store_true", help="只校验，不写文件")
     args = parser.parse_args()
 

@@ -1,0 +1,17 @@
+{
+  "name": "CS-AI Dictionary",
+  "slug": "CS_AI_Dictionary",
+  "version": "1.2",
+  "base_source": "extended_data/v1.1/base_v1.0.json",
+  "additions_dir": "extended_data/v1.1/additions",
+  "community_dir": "data/community",
+  "domains": {
+    "Programming & Algorithms": "程序设计与算法",
+    "Software Engineering & Git": "软件工程与 Git",
+    "Operating Systems & Linux": "操作系统与 Linux",
+    "Computer Networks": "计算机网络",
+    "Databases & Distributed Systems": "数据库与分布式系统",
+    "AI & Machine Learning": "人工智能与机器学习",
+    "Developer Tools & Environment": "开发工具与环境"
+  }
+}

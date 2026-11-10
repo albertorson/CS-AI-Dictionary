@@ -7,27 +7,20 @@ import re
 from collections import Counter
 from pathlib import Path
 from typing import Any
+from dictionary_config import CONFIG, output_name
 
 ROOT = Path(__file__).resolve().parent
 LOCAL_OUTPUT = ROOT / "local_output"
 DATA_DIR = ROOT / "extended_data" / "v1.1"
-BASE_SOURCE = DATA_DIR / "base_v1.0.json"
-ADDITION_DIR = DATA_DIR / "additions"
-COMMUNITY_DIR = ROOT / "data" / "community"
+BASE_SOURCE = ROOT / CONFIG['base_source'] if CONFIG.get('base_source') else None
+ADDITION_DIR = ROOT / CONFIG['additions_dir']
+COMMUNITY_DIR = ROOT / CONFIG['community_dir']
 BASELINE = ROOT / "CS_AI_Dictionary_Enhanced_v1.0_EudicBuilder.txt"
-OUTPUT = LOCAL_OUTPUT / "CS_AI_Dictionary_Extended_v1.1_EudicBuilder.txt"
-PREVIEW = LOCAL_OUTPUT / "CS_AI_Dictionary_Extended_v1.1_preview.html"
+OUTPUT = LOCAL_OUTPUT / output_name('Extended', '_EudicBuilder.txt')
+PREVIEW = LOCAL_OUTPUT / output_name('Extended', '_preview.html')
 BASELINE_ARCHIVE = ROOT / "backups" / "v1.0_2026-11-09" / "CS_AI_Dictionary_Enhanced_v1.0_EudicBuilder.txt"
 
-DOMAIN_ZH = {
-    "Programming & Algorithms": "程序设计与算法",
-    "Software Engineering & Git": "软件工程与 Git",
-    "Operating Systems & Linux": "操作系统与 Linux",
-    "Computer Networks": "计算机网络",
-    "Databases & Distributed Systems": "数据库与分布式系统",
-    "AI & Machine Learning": "人工智能与机器学习",
-    "Developer Tools & Environment": "开发工具与环境",
-}
+DOMAIN_ZH = CONFIG['domains']
 POS_ZH = {
     "n.": "名词",
     "v.": "动词",
@@ -65,9 +58,8 @@ def load_json_entries(path: Path) -> list[dict[str, Any]]:
 
 
 def load_entries() -> tuple[list[dict[str, Any]], list[str]]:
-    base = json.loads(BASE_SOURCE.read_text(encoding="utf-8-sig"))
-    entries = list(base["entries"])
-    loaded_files = [BASE_SOURCE.name]
+    entries = load_json_entries(BASE_SOURCE) if BASE_SOURCE else []
+    loaded_files = [BASE_SOURCE.name] if BASE_SOURCE else []
     for path in sorted(ADDITION_DIR.glob("*.jsonl")) + sorted(COMMUNITY_DIR.glob("*.jsonl")):
         loaded_files.append(path.name)
         for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
@@ -289,7 +281,7 @@ def build_preview(rendered: list[tuple[str, str]]) -> None:
     options = "".join(f'<option value="{esc(word)}">' for word, _ in rendered)
     document = f"""<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CS-AI Dictionary Extended v1.1 Preview</title>
+<title>{esc(CONFIG['name'])} {esc(CONFIG['version'])} Preview</title>
 <style>body{{margin:0;background:#eef3f2;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif}}.preview-nav{{position:sticky;top:0;z-index:5;padding:14px 20px;background:#ffffffee;border-bottom:1px solid #dce6e4;backdrop-filter:blur(8px)}}.preview-nav input{{box-sizing:border-box;width:min(680px,100%);padding:11px 14px;border:1px solid #bdcecb;border-radius:8px;font-size:16px;outline:none}}.preview-nav input:focus{{border-color:#167d78;box-shadow:0 0 0 3px #167d7820}}#empty{{display:none;text-align:center;color:#687876}}</style></head>
 <body><div class="preview-nav"><input id="search" list="words" value="session" aria-label="查询词条" autocomplete="off"><datalist id="words">{options}</datalist></div><main>{articles}</main><p id="empty">未找到词条</p>
 <script>
@@ -297,11 +289,13 @@ const input=document.getElementById('search');const articles=[...document.queryS
 function showEntry(){{const query=input.value.trim().toLowerCase();let shown=0;for(const article of articles){{const match=article.dataset.word===query;article.style.display=match?'block':'none';if(match)shown++}}empty.style.display=shown?'none':'block'}}
 input.addEventListener('input',showEntry);showEntry();
 </script></body></html>"""
+    # 新领域不一定包含 session，预览默认显示当前词典的第一条。
+    document = document.replace('value="session"', f'value="{esc(rendered[0][0])}"', 1)
     PREVIEW.write_text(document, encoding="utf-8")
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="构建 CS-AI Dictionary Extended v1.1")
+    parser = argparse.ArgumentParser(description=f"构建 {CONFIG['name']} 增强版")
     parser.add_argument("--check", action="store_true", help="只校验，不写文件")
     parser.add_argument("--strict", action="store_true", help="兼容旧命令；所有构建始终执行结构与重复词校验，无词数配额")
     parser.add_argument("--baseline-check", action="store_true", help="校验现有 300 条可逐字重建")

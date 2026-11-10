@@ -5,12 +5,13 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
+from dictionary_config import output_name
 
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "extended_data" / "v1.1"
 ADDITION_DIR = DATA_DIR / "additions"
 LOCAL_OUTPUT = ROOT / "local_output"
-OUT = LOCAL_OUTPUT / "CS_AI_Dictionary_Extended_v1.1.csv"
+OUT = LOCAL_OUTPUT / output_name('Extended', '.csv')
 
 
 def load_entries() -> list[dict]:

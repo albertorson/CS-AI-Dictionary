@@ -26,7 +26,7 @@ def main():
     extended.build_preview([(e['word'], extended.render_entry(e)) for e in entries])
     (out / 'statistics.json').write_text(json.dumps({'total': len(entries), 'domains': dict(counts)}, ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'已生成两版 TXT、HTML 和动态统计：{out}')
-    print('TXT 文件名保留旧版兼容命名；新增数据需重新用欧路构建器打包为 .eudic。')
+    print('文件名来自 dictionary_config.json；新增数据需重新用欧路构建器打包为 .eudic。')
 
 
 if __name__ == '__main__':

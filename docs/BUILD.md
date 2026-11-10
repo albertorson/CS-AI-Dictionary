@@ -35,12 +35,12 @@ python build.py
 
 | 文件 | 用途 |
 |---|---|
-| CS_AI_Dictionary_Simple_v1.1_EudicBuilder.txt | 简洁版打包输入 |
-| CS_AI_Dictionary_Extended_v1.1_EudicBuilder.txt | 增强版打包输入 |
-| CS_AI_Dictionary_Extended_v1.1_preview.html | 浏览器中预览增强版 |
+| CS_AI_Dictionary_Simple_v1.2_EudicBuilder.txt | 简洁版打包输入 |
+| CS_AI_Dictionary_Extended_v1.2_EudicBuilder.txt | 增强版打包输入 |
+| CS_AI_Dictionary_Extended_v1.2_preview.html | 浏览器中预览增强版 |
 | statistics.json | 本次数据总数与领域统计 |
 
-文件名中的 v1.1 是目前脚本保留的兼容命名，内容来自本次读取的全部数据，并非只能包含旧版 3000 词。可以打开 HTML 检查刚添加的词；浏览器预览不能替代欧路中的显示检查。
+上述文件名对应默认配置；名称和版本来自 dictionary_config.json 的 slug、version，修改配置后文件名也会改变。内容来自本次读取的全部数据，并非只能包含旧版 3000 词。可以打开 HTML 检查刚添加的词；浏览器预览不能替代欧路中的显示检查。
 
 ## 3. 使用欧路构建器
 

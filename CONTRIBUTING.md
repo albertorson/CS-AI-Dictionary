@@ -14,7 +14,7 @@
 
 contexts 为 1–4 组 scene/translation/note；collocations 为 3–5 组 en/zh；examples 为 1–3 组 en/zh。新词 definition 至少 20 字符，distinction 至少 10 字符。中文字段应包含中文。格式检查不能保证释义事实正确，仍需人工审阅。
 
-domain 必须使用以下英文值之一：
+domain 必须使用 dictionary_config.json 的 domains 中的标识。当前预设为：
 
 - Programming & Algorithms
 - Software Engineering & Git
@@ -24,7 +24,7 @@ domain 必须使用以下英文值之一：
 - AI & Machine Learning
 - Developer Tools & Environment
 
-新领域通过 Issue 提议，由维护者更新领域配置。没有固定词数或领域配额。
+增加领域时，在 dictionary_config.json 的 domains 中添加标识及中文显示名，并在 PR 中说明分类依据；无需改 Python 代码。没有固定词数或领域配额。
 
 ## 构建与发布
 
