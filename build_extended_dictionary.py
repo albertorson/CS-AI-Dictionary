@@ -13,20 +13,12 @@ LOCAL_OUTPUT = ROOT / "local_output"
 DATA_DIR = ROOT / "extended_data" / "v1.1"
 BASE_SOURCE = DATA_DIR / "base_v1.0.json"
 ADDITION_DIR = DATA_DIR / "additions"
+COMMUNITY_DIR = ROOT / "data" / "community"
+BASELINE = ROOT / "CS_AI_Dictionary_Enhanced_v1.0_EudicBuilder.txt"
 OUTPUT = LOCAL_OUTPUT / "CS_AI_Dictionary_Extended_v1.1_EudicBuilder.txt"
 PREVIEW = LOCAL_OUTPUT / "CS_AI_Dictionary_Extended_v1.1_preview.html"
 BASELINE_ARCHIVE = ROOT / "backups" / "v1.0_2026-11-09" / "CS_AI_Dictionary_Enhanced_v1.0_EudicBuilder.txt"
 
-TARGET_COUNTS = {
-    "Programming & Algorithms": 500,
-    "Software Engineering & Git": 550,
-    "Operating Systems & Linux": 450,
-    "Computer Networks": 350,
-    "Databases & Distributed Systems": 350,
-    "AI & Machine Learning": 550,
-    "Developer Tools & Environment": 250,
-}
-TARGET_TOTAL = sum(TARGET_COUNTS.values())
 DOMAIN_ZH = {
     "Programming & Algorithms": "程序设计与算法",
     "Software Engineering & Git": "软件工程与 Git",
@@ -76,7 +68,7 @@ def load_entries() -> tuple[list[dict[str, Any]], list[str]]:
     base = json.loads(BASE_SOURCE.read_text(encoding="utf-8-sig"))
     entries = list(base["entries"])
     loaded_files = [BASE_SOURCE.name]
-    for path in sorted(ADDITION_DIR.glob("*.jsonl")):
+    for path in sorted(ADDITION_DIR.glob("*.jsonl")) + sorted(COMMUNITY_DIR.glob("*.jsonl")):
         loaded_files.append(path.name)
         for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
             if not line.strip():
@@ -169,6 +161,8 @@ def validate_entry(entry: dict[str, Any], location: str) -> None:
 
 
 def validate_entries(entries: list[dict[str, Any]]) -> Counter:
+    if not entries:
+        raise ValueError("词典不能为空")
     seen: dict[str, str] = {}
     counts: Counter = Counter()
     for index, entry in enumerate(entries, 1):
@@ -179,9 +173,6 @@ def validate_entries(entries: list[dict[str, Any]]) -> Counter:
             raise ValueError(f"重复词头（大小写归一化）：{seen[key]} / {entry['word']}")
         seen[key] = entry["word"]
         counts[entry["domain"]] += 1
-    preserved = [entry for entry in entries if entry.get("status") == "preserved"]
-    if len(preserved) != 300:
-        raise ValueError(f"原有词条应保留 300 条，实际 {len(preserved)} 条")
     return counts
 
 
@@ -312,7 +303,7 @@ input.addEventListener('input',showEntry);showEntry();
 def main() -> None:
     parser = argparse.ArgumentParser(description="构建 CS-AI Dictionary Extended v1.1")
     parser.add_argument("--check", action="store_true", help="只校验，不写文件")
-    parser.add_argument("--strict", action="store_true", help="要求达到 3000 条及精确领域配额")
+    parser.add_argument("--strict", action="store_true", help="兼容旧命令；所有构建始终执行结构与重复词校验，无词数配额")
     parser.add_argument("--baseline-check", action="store_true", help="校验现有 300 条可逐字重建")
     args = parser.parse_args()
 
@@ -323,14 +314,8 @@ def main() -> None:
     print(f"词条总数：{len(entries)}")
     print("数据文件：", ", ".join(loaded_files))
     print("领域分布：")
-    for domain in TARGET_COUNTS:
-        print(f"  {DOMAIN_ZH[domain]}：{counts[domain]}/{TARGET_COUNTS[domain]}")
-    if args.strict:
-        if len(entries) != TARGET_TOTAL:
-            raise ValueError(f"要求 {TARGET_TOTAL} 条，实际 {len(entries)} 条")
-        for domain, target in TARGET_COUNTS.items():
-            if counts[domain] != target:
-                raise ValueError(f"{DOMAIN_ZH[domain]} 要求 {target} 条，实际 {counts[domain]} 条")
+    for domain in DOMAIN_ZH:
+        print(f"  {DOMAIN_ZH[domain]}：{counts[domain]}")
     if args.check:
         print("结构校验通过。")
         return

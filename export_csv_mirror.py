@@ -14,16 +14,9 @@ OUT = LOCAL_OUTPUT / "CS_AI_Dictionary_Extended_v1.1.csv"
 
 
 def load_entries() -> list[dict]:
-    base = json.loads((DATA_DIR / "base_v1.0.json").read_text(encoding="utf-8-sig"))
-    entries = list(base["entries"])
-    for path in sorted(ADDITION_DIR.glob("*.jsonl")):
-        for line in path.read_text(encoding="utf-8").splitlines():
-            if not line.strip():
-                continue
-            entry = json.loads(line)
-            entry.setdefault("status", "new")
-            entry.setdefault("batch", path.stem)
-            entries.append(entry)
+    from build_extended_dictionary import load_entries as load_all, validate_entries
+    entries, _ = load_all()
+    validate_entries(entries)
     return entries
 
 

@@ -123,5 +123,18 @@ def main() -> None:
     print(f"新增 {total}，总计 {total + 300}，日志：{OUT}")
 
 
+def current_report():
+    """历史批次日志保持不变，当前统计从全部数据动态生成。"""
+    from build_extended_dictionary import load_entries, validate_entries, LOCAL_OUTPUT, DOMAIN_ZH
+    entries, _ = load_entries()
+    counts = validate_entries(entries)
+    LOCAL_OUTPUT.mkdir(exist_ok=True)
+    lines = ['# 当前词典统计', '', f'总词条：{len(entries)}', '', '| 领域 | 数量 |', '|---|---:|']
+    lines.extend(f'| {DOMAIN_ZH[d]} | {counts[d]} |' for d in DOMAIN_ZH)
+    destination = LOCAL_OUTPUT / 'STATISTICS.md'
+    destination.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    print(f'已生成动态统计：{destination}')
+
+
 if __name__ == "__main__":
-    main()
+    current_report()

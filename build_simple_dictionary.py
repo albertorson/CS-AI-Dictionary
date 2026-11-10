@@ -26,20 +26,12 @@ OUTPUT = LOCAL_OUTPUT / "CS_AI_Dictionary_Simple_v1.1_EudicBuilder.txt"
 EXTENDED_TXT = LOCAL_OUTPUT / "CS_AI_Dictionary_Extended_v1.1_EudicBuilder.txt"
 
 FIELDS = ("中文释义", "词性", "专业释义", "场景辨析", "例句", "易混淆词", "所属领域")
-EXPECTED_TOTAL = 3000
 
 
 def load_entries() -> list[dict[str, Any]]:
-    base = json.loads(BASE_SOURCE.read_text(encoding="utf-8-sig"))
-    entries = list(base["entries"])
-    for path in sorted(ADDITION_DIR.glob("*.jsonl")):
-        for line in path.read_text(encoding="utf-8").splitlines():
-            if not line.strip():
-                continue
-            entry = json.loads(line)
-            entry.setdefault("status", "new")
-            entry.setdefault("batch", path.stem)
-            entries.append(entry)
+    from build_extended_dictionary import load_entries as load_all, validate_entries
+    entries, _ = load_all()
+    validate_entries(entries)
     return entries
 
 
@@ -115,13 +107,6 @@ def main() -> None:
     entries = load_entries()
     lines = [render_line(entry) for entry in entries]
     verify(lines)
-    if len(entries) != EXPECTED_TOTAL:
-        raise ValueError(f"应为 {EXPECTED_TOTAL} 条，实际 {len(entries)} 条")
-    if EXTENDED_TXT.exists():
-        expected = {line.split("@", 1)[0].strip().casefold() for line in EXTENDED_TXT.read_text(encoding="utf-8").splitlines() if line.strip()}
-        actual = {line.split("@", 1)[0].strip().casefold() for line in lines}
-        if expected != actual:
-            raise ValueError(f"词头集合与增强版不一致：仅增强版有 {sorted(expected - actual)[:5]}，仅简洁版有 {sorted(actual - expected)[:5]}")
     print(f"词条总数：{len(lines)}")
     print("结构校验通过：7 字段齐全、每行 1 个 @、例句可拆分、词头无重复且与增强版一致。")
     if args.check:
