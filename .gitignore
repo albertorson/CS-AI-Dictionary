@@ -1,0 +1,6 @@
+# 本地生成产物不上传 GitHub
+local_output/
+
+# Python 运行时缓存
+__pycache__/
+*.pyc

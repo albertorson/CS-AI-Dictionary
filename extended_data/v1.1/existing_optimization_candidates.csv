@@ -1,0 +1,46 @@
+﻿word,domain,contexts,collocations,examples,definition_chars,distinction_chars,issues
+adjacency list,程序设计与算法,2,4,2,23,52,definition<30chars
+adjacency matrix,程序设计与算法,2,4,2,29,54,definition<30chars
+background process,操作系统与 Linux,2,4,2,25,51,definition<30chars
+backpropagation,人工智能与机器学习,2,4,2,29,59,definition<30chars
+batch,人工智能与机器学习,2,4,2,23,30,definition<30chars
+binary search,程序设计与算法,2,4,2,29,46,definition<30chars
+build,软件工程与 Git,2,4,2,28,40,definition<30chars
+build artifact,软件工程与 Git,2,4,2,27,39,definition<30chars
+cache hit,数据库与分布式系统,2,3,2,26,37,collocations<4; definition<30chars
+cache miss,数据库与分布式系统,2,4,2,29,50,definition<30chars
+codebase,软件工程与 Git,2,4,2,25,40,definition<30chars
+consensus,数据库与分布式系统,2,4,2,27,48,definition<30chars
+deep learning,人工智能与机器学习,2,4,2,29,62,definition<30chars
+dependency,软件工程与 Git,2,4,2,26,40,definition<30chars
+deque,程序设计与算法,2,4,2,27,36,definition<30chars
+diff,软件工程与 Git,2,4,2,27,35,definition<30chars
+distributed version control,软件工程与 Git,2,4,2,29,78,definition<30chars
+edge,程序设计与算法,2,5,2,23,29,definition<30chars
+epoch,人工智能与机器学习,2,4,2,23,45,definition<30chars
+feature,人工智能与机器学习,2,4,2,28,39,definition<30chars
+feed,开发工具与环境,3,5,2,26,63,definition<30chars
+firewall,计算机网络,2,5,2,24,44,definition<30chars
+foreground process,操作系统与 Linux,2,5,2,23,58,definition<30chars
+generalization,人工智能与机器学习,2,4,2,25,46,definition<30chars
+isolation level,数据库与分布式系统,2,4,2,25,55,definition<30chars
+join,数据库与分布式系统,2,4,2,27,32,definition<30chars
+label,人工智能与机器学习,2,4,2,28,33,definition<30chars
+multithreading,操作系统与 Linux,2,4,2,23,45,definition<30chars
+network switch,计算机网络,2,5,2,26,37,definition<30chars
+optimizer,人工智能与机器学习,2,4,2,25,40,definition<30chars
+package manager,软件工程与 Git,2,4,2,26,52,definition<30chars
+parallelism,操作系统与 Linux,2,5,2,27,46,definition<30chars
+primary key,数据库与分布式系统,2,4,2,29,43,definition<30chars
+process ID,操作系统与 Linux,2,5,2,24,40,definition<30chars
+push,软件工程与 Git,2,4,2,23,33,definition<30chars
+quorum,数据库与分布式系统,2,4,2,28,43,definition<30chars
+relative path,操作系统与 Linux,2,4,2,26,45,definition<30chars
+reranker,人工智能与机器学习,2,4,2,29,36,definition<30chars
+router,计算机网络,2,5,2,28,35,definition<30chars
+row,数据库与分布式系统,2,4,2,25,29,definition<30chars
+SQL,数据库与分布式系统,2,4,2,28,29,definition<30chars
+subnet mask,计算机网络,2,4,2,27,48,definition<30chars
+training set,人工智能与机器学习,2,4,2,14,43,definition<30chars
+untracked file,软件工程与 Git,2,4,2,26,44,definition<30chars
+vertex,程序设计与算法,2,5,2,28,37,definition<30chars

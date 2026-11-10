@@ -1,0 +1,301 @@
+headword	domain
+adjacency list	Programming & Algorithms
+adjacency matrix	Programming & Algorithms
+algorithm	Programming & Algorithms
+amortized analysis	Programming & Algorithms
+array	Programming & Algorithms
+backtracking	Programming & Algorithms
+BFS	Programming & Algorithms
+Big O notation	Programming & Algorithms
+binary search	Programming & Algorithms
+binary search tree	Programming & Algorithms
+binary tree	Programming & Algorithms
+breadth-first search	Programming & Algorithms
+data structure	Programming & Algorithms
+depth-first search	Programming & Algorithms
+deque	Programming & Algorithms
+DFS	Programming & Algorithms
+dictionary	Programming & Algorithms
+divide and conquer	Programming & Algorithms
+dynamic programming	Programming & Algorithms
+edge	Programming & Algorithms
+graph	Programming & Algorithms
+graph traversal	Programming & Algorithms
+greedy algorithm	Programming & Algorithms
+hash collision	Programming & Algorithms
+hash function	Programming & Algorithms
+hash table	Programming & Algorithms
+heap	Programming & Algorithms
+in-place algorithm	Programming & Algorithms
+iteration	Programming & Algorithms
+linked list	Programming & Algorithms
+map	Programming & Algorithms
+memoization	Programming & Algorithms
+prefix sum	Programming & Algorithms
+priority queue	Programming & Algorithms
+queue	Programming & Algorithms
+recursion	Programming & Algorithms
+set	Programming & Algorithms
+sliding window	Programming & Algorithms
+space complexity	Programming & Algorithms
+stable sort	Programming & Algorithms
+stack	Programming & Algorithms
+time complexity	Programming & Algorithms
+tree	Programming & Algorithms
+two pointers	Programming & Algorithms
+vertex	Programming & Algorithms
+.gitignore	Software Engineering & Git
+API	Software Engineering & Git
+branch	Software Engineering & Git
+build	Software Engineering & Git
+build artifact	Software Engineering & Git
+checkout	Software Engineering & Git
+cherry-pick	Software Engineering & Git
+CI/CD	Software Engineering & Git
+CLI	Software Engineering & Git
+clone	Software Engineering & Git
+codebase	Software Engineering & Git
+commit	Software Engineering & Git
+commit message	Software Engineering & Git
+continuous delivery	Software Engineering & Git
+continuous deployment	Software Engineering & Git
+continuous integration	Software Engineering & Git
+dependency	Software Engineering & Git
+detached HEAD	Software Engineering & Git
+diff	Software Engineering & Git
+distributed version control	Software Engineering & Git
+endpoint	Software Engineering & Git
+fetch	Software Engineering & Git
+fork	Software Engineering & Git
+Git hook	Software Engineering & Git
+GraphQL	Software Engineering & Git
+HEAD	Software Engineering & Git
+issue	Software Engineering & Git
+issue tracker	Software Engineering & Git
+local repository	Software Engineering & Git
+merge	Software Engineering & Git
+merge conflict	Software Engineering & Git
+merge request	Software Engineering & Git
+MR	Software Engineering & Git
+origin	Software Engineering & Git
+package manager	Software Engineering & Git
+patch	Software Engineering & Git
+pipeline	Software Engineering & Git
+PR	Software Engineering & Git
+pre-commit hook	Software Engineering & Git
+pull	Software Engineering & Git
+pull request	Software Engineering & Git
+push	Software Engineering & Git
+rebase	Software Engineering & Git
+release	Software Engineering & Git
+remote repository	Software Engineering & Git
+repo	Software Engineering & Git
+repository	Software Engineering & Git
+request	Software Engineering & Git
+reset	Software Engineering & Git
+response	Software Engineering & Git
+REST API	Software Engineering & Git
+revert	Software Engineering & Git
+SDK	Software Engineering & Git
+semantic versioning	Software Engineering & Git
+source code	Software Engineering & Git
+staged changes	Software Engineering & Git
+staging area	Software Engineering & Git
+stash	Software Engineering & Git
+submodule	Software Engineering & Git
+switch	Software Engineering & Git
+tag	Software Engineering & Git
+untracked file	Software Engineering & Git
+upstream	Software Engineering & Git
+version control	Software Engineering & Git
+working tree	Software Engineering & Git
+absolute path	Operating Systems & Linux
+background process	Operating Systems & Linux
+concurrency	Operating Systems & Linux
+context switch	Operating Systems & Linux
+daemon	Operating Systems & Linux
+deadlock	Operating Systems & Linux
+file descriptor	Operating Systems & Linux
+file permission	Operating Systems & Linux
+file system	Operating Systems & Linux
+foreground process	Operating Systems & Linux
+inode	Operating Systems & Linux
+interrupt	Operating Systems & Linux
+kernel	Operating Systems & Linux
+kernel space	Operating Systems & Linux
+memory leak	Operating Systems & Linux
+mount	Operating Systems & Linux
+multithreading	Operating Systems & Linux
+mutex	Operating Systems & Linux
+operating system	Operating Systems & Linux
+page fault	Operating Systems & Linux
+parallelism	Operating Systems & Linux
+pipe	Operating Systems & Linux
+process	Operating Systems & Linux
+process ID	Operating Systems & Linux
+race condition	Operating Systems & Linux
+redirection	Operating Systems & Linux
+relative path	Operating Systems & Linux
+scheduler	Operating Systems & Linux
+semaphore	Operating Systems & Linux
+shell	Operating Systems & Linux
+signal	Operating Systems & Linux
+standard error	Operating Systems & Linux
+standard input	Operating Systems & Linux
+standard output	Operating Systems & Linux
+swap space	Operating Systems & Linux
+symbolic link	Operating Systems & Linux
+system call	Operating Systems & Linux
+thread	Operating Systems & Linux
+user space	Operating Systems & Linux
+virtual memory	Operating Systems & Linux
+cookie	Computer Networks
+DHCP	Computer Networks
+DNS	Computer Networks
+encapsulation	Computer Networks
+firewall	Computer Networks
+frame	Computer Networks
+gateway	Computer Networks
+header	Computer Networks
+HTTP	Computer Networks
+HTTP method	Computer Networks
+HTTPS	Computer Networks
+IP address	Computer Networks
+latency	Computer Networks
+NAT	Computer Networks
+network protocol	Computer Networks
+network switch	Computer Networks
+packet	Computer Networks
+payload	Computer Networks
+port	Computer Networks
+proxy	Computer Networks
+request header	Computer Networks
+response body	Computer Networks
+reverse proxy	Computer Networks
+router	Computer Networks
+socket	Computer Networks
+status code	Computer Networks
+subnet	Computer Networks
+subnet mask	Computer Networks
+TCP	Computer Networks
+TCP handshake	Computer Networks
+TLS	Computer Networks
+UDP	Computer Networks
+URI	Computer Networks
+URL	Computer Networks
+WebSocket	Computer Networks
+ACID	Databases & Distributed Systems
+cache	Databases & Distributed Systems
+cache hit	Databases & Distributed Systems
+cache invalidation	Databases & Distributed Systems
+cache miss	Databases & Distributed Systems
+column	Databases & Distributed Systems
+consensus	Databases & Distributed Systems
+consistency	Databases & Distributed Systems
+database	Databases & Distributed Systems
+denormalization	Databases & Distributed Systems
+distributed system	Databases & Distributed Systems
+document database	Databases & Distributed Systems
+eventual consistency	Databases & Distributed Systems
+foreign key	Databases & Distributed Systems
+index	Databases & Distributed Systems
+isolation level	Databases & Distributed Systems
+join	Databases & Distributed Systems
+key-value store	Databases & Distributed Systems
+leader election	Databases & Distributed Systems
+MVCC	Databases & Distributed Systems
+normalization	Databases & Distributed Systems
+NoSQL	Databases & Distributed Systems
+partitioning	Databases & Distributed Systems
+primary key	Databases & Distributed Systems
+query	Databases & Distributed Systems
+query plan	Databases & Distributed Systems
+quorum	Databases & Distributed Systems
+relational database	Databases & Distributed Systems
+replication	Databases & Distributed Systems
+row	Databases & Distributed Systems
+schema	Databases & Distributed Systems
+sharding	Databases & Distributed Systems
+SQL	Databases & Distributed Systems
+table	Databases & Distributed Systems
+transaction	Databases & Distributed Systems
+actor-critic	AI & Machine Learning
+alignment	AI & Machine Learning
+artificial intelligence	AI & Machine Learning
+backpropagation	AI & Machine Learning
+batch	AI & Machine Learning
+context window	AI & Machine Learning
+dataset	AI & Machine Learning
+decoding	AI & Machine Learning
+deep learning	AI & Machine Learning
+embedding	AI & Machine Learning
+epoch	AI & Machine Learning
+feature	AI & Machine Learning
+few-shot learning	AI & Machine Learning
+fine-tuning	AI & Machine Learning
+generalization	AI & Machine Learning
+gradient descent	AI & Machine Learning
+hallucination	AI & Machine Learning
+hyperparameter	AI & Machine Learning
+inference	AI & Machine Learning
+instruction tuning	AI & Machine Learning
+label	AI & Machine Learning
+LLM	AI & Machine Learning
+loss function	AI & Machine Learning
+machine learning	AI & Machine Learning
+mini-batch	AI & Machine Learning
+model	AI & Machine Learning
+multimodal	AI & Machine Learning
+optimizer	AI & Machine Learning
+overfitting	AI & Machine Learning
+parameter	AI & Machine Learning
+policy	AI & Machine Learning
+pretraining	AI & Machine Learning
+prompt	AI & Machine Learning
+quantization	AI & Machine Learning
+RAG	AI & Machine Learning
+regularization	AI & Machine Learning
+reinforcement learning	AI & Machine Learning
+reranker	AI & Machine Learning
+retrieval	AI & Machine Learning
+reward model	AI & Machine Learning
+similarity search	AI & Machine Learning
+system prompt	AI & Machine Learning
+temperature	AI & Machine Learning
+test set	AI & Machine Learning
+token	AI & Machine Learning
+tokenizer	AI & Machine Learning
+top-p	AI & Machine Learning
+training	AI & Machine Learning
+training set	AI & Machine Learning
+underfitting	AI & Machine Learning
+validation set	AI & Machine Learning
+value function	AI & Machine Learning
+vector database	AI & Machine Learning
+vector embedding	AI & Machine Learning
+zero-shot learning	AI & Machine Learning
+autocomplete	Developer Tools & Environment
+breakpoint	Developer Tools & Environment
+code editor	Developer Tools & Environment
+configuration file	Developer Tools & Environment
+container	Developer Tools & Environment
+debugger	Developer Tools & Environment
+extension	Developer Tools & Environment
+feed	Developer Tools & Environment
+formatter	Developer Tools & Environment
+IDE	Developer Tools & Environment
+integrated terminal	Developer Tools & Environment
+language server	Developer Tools & Environment
+linter	Developer Tools & Environment
+log	Developer Tools & Environment
+plugin	Developer Tools & Environment
+profiler	Developer Tools & Environment
+refactoring	Developer Tools & Environment
+remote development	Developer Tools & Environment
+remote SSH	Developer Tools & Environment
+runtime	Developer Tools & Environment
+session	Developer Tools & Environment
+SSH	Developer Tools & Environment
+stack trace	Developer Tools & Environment
+virtual environment	Developer Tools & Environment
+workspace	Developer Tools & Environment
