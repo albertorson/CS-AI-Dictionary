@@ -13,23 +13,26 @@
 | 简洁版 | 中文释义、词性、专业释义、场景辨析、例句 | 快速查词 |
 | 增强版 | 语境、常见搭配、双语例句、易混词辨析 | 深入学习和专业阅读 |
 
-<p align="center">
-<img width="1013" height="322" alt="image" src="https://github.com/user-attachments/assets/79f7eb83-6eb9-481a-9909-dd58a74674b4" />
-<br>
-<em>简洁版示例</em>
-</p>
+<table>
+<tr><th>简洁版 · 快速查词</th><th>增强版 · 按需展开</th></tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://github.com/user-attachments/assets/79f7eb83-6eb9-481a-9909-dd58a74674b4"><img width="360" alt="简洁版 session 词条示例，点击查看原图" src="https://github.com/user-attachments/assets/79f7eb83-6eb9-481a-9909-dd58a74674b4" /></a>
+</td>
+<td width="50%" valign="top">
+<a href="https://github.com/user-attachments/assets/3e99ed24-916a-4a71-98b1-eb348625afd7"><img width="360" alt="增强版 session 词条折叠示例，点击查看原图" src="https://github.com/user-attachments/assets/3e99ed24-916a-4a71-98b1-eb348625afd7" /></a>
+</td>
+</tr>
+</table>
+
+<details>
+<summary>查看增强版完整展开效果（点击图片可查看原图）</summary>
 
 <p align="center">
-<img width="971" height="604" alt="image" src="https://github.com/user-attachments/assets/3e99ed24-916a-4a71-98b1-eb348625afd7" />
-<br>
-<em>增强版示例（折叠）</em>
+<a href="https://github.com/user-attachments/assets/39a48f69-8573-4826-b7c8-e90d3dbc2a24"><img width="460" alt="增强版 session 词条完整展开效果" src="https://github.com/user-attachments/assets/39a48f69-8573-4826-b7c8-e90d3dbc2a24" /></a>
 </p>
 
-<p align="center">
-<img width="992" height="946" alt="image" src="https://github.com/user-attachments/assets/39a48f69-8573-4826-b7c8-e90d3dbc2a24" />
-<br>
-<em>增强版示例（展开）</em>
-</p>
+</details>
 
 
 ## 词条覆盖
